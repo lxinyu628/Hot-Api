@@ -120,9 +120,9 @@ docker-compose up -d
 
 ```bash
 # 拉取
-docker pull imsyy/dailyhot-api:latest
+docker pull imsyy/dailyhot-api:1.0.5
 # 运行
-docker run -p 6688:6688 -d imsyy/dailyhot-api:latest
+docker run -p 6688:6688 -d imsyy/dailyhot-api:1.0.5
 ```
 
 ### 手动部署
