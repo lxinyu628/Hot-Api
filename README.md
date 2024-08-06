@@ -2,264 +2,195 @@
 <img alt="logo" height="120" src="./public/favicon.png" width="120"/>
 <h2>今日热榜</h2>
 <p>一个聚合热门数据的 API 接口</p>
+<br />
+<img src="https://img.shields.io/github/last-commit/imsyy/DailyHotApi" alt="last commit"/>
+ <img src="https://img.shields.io/github/languages/code-size/imsyy/DailyHotApi" alt="code size"/>
+ <img src="https://img.shields.io/docker/image-size/imsyy/dailyhot-api" alt="docker-image-size"/>
+<img src="https://github.com/imsyy/DailyHotApi/actions/workflows/docker.yml/badge.svg" alt="Publish Docker image"/>
+<img src="https://github.com/imsyy/DailyHotApi/actions/workflows/npm.yml/badge.svg" alt="Publish npm package"/>
 </div>
 
-## 示例
+## 🚩 特性
 
-> 这里是使用该 API 的示例站点
+- 极快响应，便于开发
+- 支持 RSS 模式和 JSON 模式
+- 支持多种部署方式
+- 简明的路由目录，便于新增
+
+## 👀 示例
+
+> 这里是使用该 API 的示例站点  
+> 示例站点可能由于访问量或者长久未维护而访问异常  
+> 若您也使用了本 API 搭建了网站，欢迎提交您的站点链接
 
 - [今日热榜 - https://hot.imsyy.top/](https://hot.imsyy.top/)
 
-## 总览
+## 🎉 总览
 
-> 🟢 状态正常
-> 🟠 可能失效
-> ❌ 无法使用
+> 🟢 状态正常 / 🟠 可能失效 / ❌ 无法使用 / ⚠️ 需要科学上网
 
-| **站点**     | **类别** | **调用名称**          | **状态** |
-| ------------ | -------- | --------------------- | -------- |
-| 哔哩哔哩     | 热门榜   | bilibili              | 🟢       |
-| 微博         | 热搜榜   | weibo                 | 🟢       |
-| 知乎         | 热榜     | zhihu                 | 🟢       |
-| 百度         | 热搜榜   | baidu                 | 🟢       |
-| 抖音         | 热点榜   | douyin / douyin_new   | 🟢       |
-| 抖音         | 热歌榜   | douyin_music          | 🟢       |
-| 豆瓣         | 新片榜   | douban_new            | 🟢       |
-| 豆瓣讨论小组 | 讨论精选 | douban_group          | 🟢       |
-| 百度贴吧     | 热议榜   | tieba                 | 🟢       |
-| 少数派       | 热榜     | sspai                 | 🟢       |
-| IT 之家      | 热榜     | ithome                | 🟠       |
-| 澎湃新闻     | 热榜     | thepaper              | 🟢       |
-| 今日头条     | 热榜     | toutiao               | 🟢       |
-| 36 氪        | 热榜     | 36kr                  | 🟢       |
-| 稀土掘金     | 热榜     | juejin                | 🟢       |
-| 腾讯新闻     | 热点榜   | newsqq                | 🟢       |
-| 网易新闻     | 热点榜   | netease               | 🟢       |
-| 英雄联盟     | 更新公告 | lol                   | 🟢       |
-| 原神         | 最新消息 | genshin               | 🟢       |
-| 微信读书     | 飙升榜   | weread                | 🟢       |
-| 快手         | 热榜     | kuaishou              | 🟢       |
-| 网易云音乐   | 排行榜   | netease_music_toplist | 🟢       |
-| QQ音乐       | 排行榜   | qq_music_toplist      | 🟢       |
-| NGA          | 热帖     | ngabbs                | 🟢       |
-| Github       | Trending | github                | 🟢       |
-| V2EX         | 热榜     | v2ex                  | 🟠       |
-| 历史上的今天 | 指定日期 | calendar              | 🟢       |
+<details>
+<summary>查看全部接口状态</summary>
 
-### 特殊接口说明
+| **站点**         | **类别**     | **调用名称**   | **状态** |
+| ---------------- | ------------ | -------------- | -------- |
+| 哔哩哔哩         | 热门榜       | bilibili       | 🟢       |
+| AcFun            | 排行榜       | acfun          | 🟢       |
+| 微博             | 热搜榜       | weibo          | 🟢       |
+| 知乎             | 热榜         | zhihu          | 🟢       |
+| 知乎日报         | 推荐榜       | zhihu-daily    | 🟢       |
+| 百度             | 热搜榜       | baidu          | 🟢       |
+| 抖音             | 热点榜       | douyin         | 🟢       |
+| 豆瓣电影         | 新片榜       | douban-movie   | 🟢       |
+| 豆瓣讨论小组     | 讨论精选     | douban-group   | 🟢       |
+| 百度贴吧         | 热议榜       | tieba          | 🟢       |
+| 少数派           | 热榜         | sspai          | 🟢       |
+| IT之家           | 热榜         | ithome         | 🟠       |
+| IT之家「喜加一」 | 最新动态     | ithome-xijiayi | 🟠       |
+| 简书             | 热门推荐     | jianshu        | 🟠       |
+| 澎湃新闻         | 热榜         | thepaper       | 🟢       |
+| 今日头条         | 热榜         | toutiao        | 🟢       |
+| 36 氪            | 热榜         | 36kr           | 🟢       |
+| 51CTO            | 推荐榜       | 51cto          | 🟢       |
+| CSDN             | 排行榜       | csdn           | 🟢       |
+| NodeSeek         | 最新动态     | nodeseek       | 🟢       |
+| 稀土掘金         | 热榜         | juejin         | 🟢       |
+| 腾讯新闻         | 热点榜       | qq-news        | 🟢       |
+| 新浪网           | 热榜         | sina           | 🟢       |
+| 新浪新闻         | 热点榜       | sina-news      | 🟢       |
+| 网易新闻         | 热点榜       | netease-news   | 🟢       |
+| 吾爱破解         | 榜单         | 52pojie        | ❌       |
+| 全球主机交流     | 榜单         | hostloc        | ❌       |
+| 虎嗅             | 24小时       | huxiu          | 🟢       |
+| 虎扑             | 步行街热帖   | hupu           | 🟢       |
+| 爱范儿           | 快讯         | ifanr          | 🟢       |
+| 英雄联盟         | 更新公告     | lol            | 🟢       |
+| 原神             | 最新消息     | genshin        | 🟢       |
+| 崩坏3            | 最新动态     | honkai         | 🟢       |
+| 崩坏：星穹铁道   | 最新动态     | starrail       | 🟢       |
+| 微信读书         | 飙升榜       | weread         | 🟢       |
+| NGA              | 热帖         | ngabbs         | 🟢       |
+| V2EX             | 主题榜       | v2ex           | ⚠️       |
+| HelloGitHub      | Trending     | hellogithub    | 🟢       |
+| 中央气象台       | 全国气象预警 | weatheralarm   | 🟢       |
+| 中国地震台       | 地震速报     | earthquake     | 🟢       |
+| 历史上的今天     | 月-日        | history        | 🟢       |
 
-#### 网易云音乐
+</details>
 
-调用网易云音乐排行榜需要传入指定榜单类别
+## ⚙️ 使用
 
-| 参数名 | 参数值 | 说明   |
-| ------ | ------ | ------ |
-| type   | 1      | 飙升榜 |
-| type   | 2      | 新歌榜 |
-| type   | 3      | 原创榜 |
-| type   | 4      | 热歌榜 |
-
-```http
-GET https://example.com/netease_music_toplist?type=1
-```
-
-#### QQ音乐
-
-调用QQ音乐排行榜需要传入指定榜单类别
-
-| 参数名 | 参数值 | 说明             |
-| ------ | ------ | ---------------- |
-| type   | 1      | 飙升榜           |
-| type   | 2      | 热歌榜           |
-| type   | 3      | 新歌榜           |
-| type   | 4      | 流行指数榜       |
-| type   | 5      | 腾讯音乐人原创榜 |
-| type   | 6      | 听歌识曲榜       |
-
-```http
-GET https://example.com/qq_music_toplist?type=1
-```
-
-#### 获取全部接口信息
-
-获取除了下方特殊接口外的全部接口列表
-
-```http
-GET https://example.com/all
-```
-
-#### 历史上的今天（指定日期）
-
-将指定的月份和日期传入即可得到当天数据，请注意格式
-
-```http
-GET https://example.com/calendar/date?month=06&day=01
-```
-
-## 部署
+本项目支持 `Node.js` 调用，可在安装完成后调用 `serveHotApi` 来开启服务器
 
 ```bash
-# 安装依赖
-pnpm install
-
-# 运行
-pnpm start
+pnpm add dailyhot-api
 ```
 
-## Docker 部署
+```js
+import serveHotApi from "dailyhot-api";
+
+/**
+ * 启动服务器
+ * @param {Number} [port] - 端口号
+ * @returns {Promise<void>}
+ */
+serveHotApi(3000);
+```
+
+## ⚙️ 部署
+
+具体使用说明可参考 [我的博客](https://blog.imsyy.top/posts/2024/0408)，下方仅讲解基础操作：
+
+### Docker 部署
 
 > 安装及配置 Docker 将不在此处说明，请自行解决
 
-### 本地构建
+#### 本地构建
 
 ```bash
 # 构建
 docker build -t dailyhot-api .
 # 运行
 docker run -p 6688:6688 -d dailyhot-api
+# 或使用 Docker Compose
+docker-compose up -d
 ```
 
-### 在线部署
+#### 在线部署
 
 ```bash
 # 拉取
-docker pull imsyy/dailyhot-api:latest
+docker pull imsyy/dailyhot-api:1.0.5
 # 运行
-docker run -p 6688:6688 -d imsyy/dailyhot-api:latest
+docker run -p 6688:6688 -d imsyy/dailyhot-api:1.0.5
 ```
 
-## Vercel 部署
+### 手动部署
 
-现已支持 Vercel 部署，无需服务器
+最直接的方式，您可以按照以下步骤将 DailyHotApi 部署在您的电脑、服务器或者其他任何地方
 
-### 操作方法
+#### 安装
 
-1. fork 本项目
-2. 在 `Vercel` 官网点击 `New Project`
-3. 点击 `Import Git Repository` 并选择你 fork 的此项目并点击 `import`
-4. `PROJECT NAME`自己填，`FRAMEWORK PRESET` 选 `Other` 然后直接点 `Deploy` 接着等部署完成即可
-
-## 调用
-
-### 获取榜单数据
-
-> 获取数据只需在域名后面加上上方列表中的调用名称即可
-
-```http
-GET https://api-hot.imsyy.top/bilibili/
+```bash
+git clone https://github.com/imsyy/DailyHotApi.git
+cd DailyHotApi
 ```
 
-<details>
-<summary>调用示例</summary>
+然后再执行安装依赖
 
-```json
-{
-    "code": 200,
-    "message": "获取成功",
-    "title": "哔哩哔哩", // 榜单名称
-    "subtitle": "热门榜", // 榜单类别
-    "from": "server", // 此处返回是最新数据还是缓存
-    "total": 100, // 数据总数
-    "updateTime": "2023-03-14T07:40:51.846Z", // 数据获取时间
-    "data": [
-        {
-            "id": "BV1E84y1A7z2",
-            "title": "假如我的校园是一款RPG游戏！",
-            "desc": "所有取景都是在学校里面拍的，都是真实存在的场景哦！",
-            "pic": "http://i2.hdslb.com/bfs/archive/a24e442d0aae6d488db023c4ddcb450e9f2bf5f3.jpg",
-            "owner": {
-                "mid": 424658638,
-                "name": "四夕小田木_已黑化_",
-                "face": "https://i1.hdslb.com/bfs/face/afd9ba47933edc4842ccbeba2891a25465d1cf77.jpg"
-            },
-            "data": {
-                "aid": 610872610,
-                "view": 4178745,
-                "danmaku": 4229,
-                "reply": 5317,
-                "favorite": 91020,
-                "coin": 133596,
-                "share": 46227,
-                "now_rank": 0,
-                "his_rank": 1,
-                "like": 616519,
-                "dislike": 0,
-                "vt": 0,
-                "vv": 0
-            },
-            "url": "https://b23.tv/BV1E84y1A7z2",
-            "mobileUrl": "https://m.bilibili.com/video/BV1E84y1A7z2"
-        },
-        ...
-    ]
-}
+```bash
+npm install
 ```
 
-</details>
+#### 开发
 
-### 获取榜单最新数据
-
-> 获取最新数据只需在原链接后面加上 `/new`，这样就会直接从服务端拉取最新数据，不会从本地缓存中读取
-
-```http
-GET https://api-hot.imsyy.top/bilibili/new
+```bash
+npm run dev
 ```
 
-<details>
-<summary>调用示例</summary>
+成功启动后程序会在控制台输出可访问的地址
 
-```json
-{
-    "code": 200,
-    "message": "获取成功",
-    "title": "哔哩哔哩", // 榜单名称
-    "subtitle": "热门榜", // 榜单类别
-    "total": 100, // 数据总数
-    "updateTime": "2023-03-14T07:40:51.846Z", // 数据获取时间
-    "data": [
-        {
-            "id": "BV1E84y1A7z2",
-            "title": "假如我的校园是一款RPG游戏！",
-            "desc": "所有取景都是在学校里面拍的，都是真实存在的场景哦！",
-            "pic": "http://i2.hdslb.com/bfs/archive/a24e442d0aae6d488db023c4ddcb450e9f2bf5f3.jpg",
-            "owner": {
-                "mid": 424658638,
-                "name": "四夕小田木_已黑化_",
-                "face": "https://i1.hdslb.com/bfs/face/afd9ba47933edc4842ccbeba2891a25465d1cf77.jpg"
-            },
-            "data": {
-                "aid": 610872610,
-                "view": 4178745,
-                "danmaku": 4229,
-                "reply": 5317,
-                "favorite": 91020,
-                "coin": 133596,
-                "share": 46227,
-                "now_rank": 0,
-                "his_rank": 1,
-                "like": 616519,
-                "dislike": 0,
-                "vt": 0,
-                "vv": 0
-            },
-            "url": "https://b23.tv/BV1E84y1A7z2",
-            "mobileUrl": "https://m.bilibili.com/video/BV1E84y1A7z2"
-        },
-        ...
-    ]
-}
+#### 编译运行
+
+```bash
+npm run build
+npm run start
 ```
 
-</details>
+成功启动后程序会在控制台输出可访问的地址
 
-## 其他
+### Vercel 部署
 
-- 本项目为了避免频繁请求官方数据，默认对数据做了缓存处理，默认为 `30` 分钟，如需更改，请自行前往 `utils\cacheData.js` 文件修改
+本项目支持通过 `Vercel` 进行一键部署，点击下方按钮或前往 [项目仓库](https://github.com/imsyy/DailyHotApi-Vercel) 进行手动部署
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/imsyys-projects/clone?repository-url=https%3A%2F%2Fgithub.com%2Fimsyy%2FDailyHotApi-Vercel)
+
+### Railway 部署
+
+本项目支持使用 [Railway](https://railway.app/) 一键部署，请先将本项目 fork 到您的仓库中，即可使用一键部署。
+
+### Zeabur 部署
+
+本项目支持使用 [Zeabur](https://zeabur.com/) 一键部署，请先将本项目 fork 到您的仓库中，即可使用一键部署。
+
+## ⚠️ 须知
+
+- 本项目为了避免频繁请求官方数据，默认对数据做了缓存处理，默认为 `60` 分钟，如需更改，请自行修改配置
 - 本项目部分接口使用了 **页面爬虫**，若违反对应页面的相关规则，请 **及时通知我去除该接口**
 
-## 免责声明
+## 📢 免责声明
 
 - 本项目提供的 `API` 仅供开发者进行技术研究和开发测试使用。使用该 `API` 获取的信息仅供参考，不代表本项目对信息的准确性、可靠性、合法性、完整性作出任何承诺或保证。本项目不对任何因使用该 `API` 获取信息而导致的任何直接或间接损失负责。本项目保留随时更改 `API` 接口地址、接口协议、接口参数及其他相关内容的权利。本项目对使用者使用 `API` 的行为不承担任何直接或间接的法律责任
 - 本项目并未与相关信息提供方建立任何关联或合作关系，获取的信息均来自公开渠道，如因使用该 `API` 获取信息而产生的任何法律责任，由使用者自行承担
 - 本项目对使用 `API` 获取的信息进行了最大限度的筛选和整理，但不保证信息的准确性和完整性。使用 `API` 获取信息时，请务必自行核实信息的真实性和可靠性，谨慎处理相关事项
 - 本项目保留对 `API` 的随时更改、停用、限制使用等措施的权利。任何因使用本 `API` 产生的损失，本项目不负担任何赔偿和责任
+
+## 😘 鸣谢
+
+特此感谢为本项目提供支持与灵感的项目
+
+- [RSSHub](https://github.com/DIYgod/RSSHub)
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=imsyy/DailyHotApi&type=Date)](https://star-history.com/#imsyy/DailyHotApi&Date)
